@@ -25,10 +25,6 @@ export default class AddTodo extends Component {
     this.setState({ input: "" });
   }
 
-  handleChange(e) {
-    this.setState({ input: e.target.value });
-  }
-
   render() {
     return (
       <form className="todo-form" onSubmit={this.handleSubmit.bind(this)}>
@@ -36,7 +32,7 @@ export default class AddTodo extends Component {
           type="text"
           placeholder="Walk the dog..."
           value={this.state.input}
-          onChange={this.handleChange.bind(this)}
+          onChange={(e) => this.setState({ input: e.target.value })}
           autoFocus
         />
         <button type="submit">Add task</button>
