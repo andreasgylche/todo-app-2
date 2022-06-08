@@ -10,6 +10,12 @@ export default class AddTodo extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    if (this.state.input === "") {
+      alert("Please fill out the input field before adding a todo.");
+      return;
+    }
+
     const newTodo = {
       id: Math.round(Math.random() * 10000),
       title: this.state.input,
