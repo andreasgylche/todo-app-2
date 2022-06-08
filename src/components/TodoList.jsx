@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { FaTrash } from "react-icons/fa";
 
 export default class TodoList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if (!this.props.todos.length > 0) {
       return (
